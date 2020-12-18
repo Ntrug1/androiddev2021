@@ -2,6 +2,8 @@ package vn.edu.usth.weather;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,14 +16,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("Death", "onCreate");
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        PagerAdapter adapter = new Adapter(getSupportFragmentManager());
+        ViewPager pager = findViewById(R.id.pager);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(adapter);
 
-        ForecastFragment forecastFragment = new ForecastFragment();
-        WeatherFragment weatherFragment = new WeatherFragment();
 
-        ft.add(R.id.weather, weatherFragment,null);
-        ft.add(R.id.forecast,forecastFragment,null);
-        ft.commit();
     }
 
     @Override
