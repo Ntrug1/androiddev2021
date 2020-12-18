@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 public class Adapter extends FragmentPagerAdapter {
     private final int PAGE_COUNT = 3;
-//    private String titles[] = new String[] { "Hanoi", "Paris", "Toulouse" };
+    private String titles[] = new String[] { "Hanoi", "Paris", "Toulouse" };
     public Adapter(FragmentManager fm) {
         super(fm);
     }
@@ -29,9 +29,9 @@ public class Adapter extends FragmentPagerAdapter {
         }
         return new Fragment(); // failsafe
     }
-//    @Override
-//    public CharSequence getPageTitle(int page) {
-//// returns a tab title corresponding to the specified page
-//        return titles[page];
-//    }
+    @Override
+    public CharSequence getPageTitle(int page) {
+// returns a tab title corresponding to the specified page
+        return titles[page];
+    }
 }
