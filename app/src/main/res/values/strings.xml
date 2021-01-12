@@ -12,5 +12,7 @@
     <string name="fri">Fri</string>
     <string name="sat">Sat</string>
     <string name="sun">Sun</string>
+    <string name="action_setting">setting</string>
+    <string name="refresh">refresh</string>
 
 </resources>
